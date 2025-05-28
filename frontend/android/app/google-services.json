@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "402982696514",
+    "project_id": "zevento-e8b17",
+    "storage_bucket": "zevento-e8b17.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402982696514:android:be9e0b4026124383cb5fdb",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402982696514-cb9qt0ntasj4h45tosc42m0huo96gpng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZgSvbS1NZT18MjGODuwgIboFXRfxvKlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402982696514-cb9qt0ntasj4h45tosc42m0huo96gpng.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "402982696514-ooggcg2at5ngtodumqchco5nbrggooa8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.frontend"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
