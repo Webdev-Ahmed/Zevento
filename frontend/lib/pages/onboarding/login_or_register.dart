@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/components/my_button.dart';
+import 'package:frontend/pages/onboarding/login_register_toggle.dart';
 
 class LoginOrRegister extends StatelessWidget {
   const LoginOrRegister({super.key});
@@ -6,74 +8,81 @@ class LoginOrRegister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SizedBox(height: 60),
-            Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50),
-                  bottomRight: Radius.circular(50),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Theme.of(
-                      context,
-                    ).colorScheme.onSurface.withValues(alpha: 0.3),
-                    blurRadius: 20,
-                    spreadRadius: 0.5,
-                  ),
-                ],
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
               ),
-              height: 300,
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.calendar_month_rounded,
-                        size: 65,
-                        color: Theme.of(context).colorScheme.onPrimary,
-                      ),
-                      Text(
-                        "Zevento",
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.onPrimary,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 10),
-
-                  Text(
-                    "The best way to tour!",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onPrimary,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      spreadRadius: 1,
+                      blurRadius: 20,
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                child: Image.network(
+                  "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  height: MediaQuery.of(context).size.height * 0.55,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.bottomCenter,
+                ),
               ),
             ),
 
-            // Logo
+            SizedBox(height: 20),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Opacity(
+                opacity: 0.7,
+                child: Text(
+                  "Zevento",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontVariations: [FontVariation("wght", 600.0)],
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                "Travel anywhere without worry!",
+                style: TextStyle(
+                  fontFamily: "Playfair",
+                  fontVariations: [FontVariation("wght", 600.0)],
+                  fontSize: 45,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            MyButton(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginRegisterToggle(),
+                  ),
+                );
+              },
+              text: "Next",
+            ),
           ],
         ),
       ),
     );
   }
-}
-
-extension on TextStyle {
-  fadeIn() {}
 }
