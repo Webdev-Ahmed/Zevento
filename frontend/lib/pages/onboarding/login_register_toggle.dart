@@ -21,7 +21,10 @@ class _LoginRegisterToggleState extends State<LoginRegisterToggle> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: loginPageToggle ? LoginPage(onTap: togglePage) : RegisterPage(),
+      child:
+          loginPageToggle
+              ? LoginPage(onTap: togglePage)
+              : RegisterPage(onTap: togglePage),
     );
   }
 }

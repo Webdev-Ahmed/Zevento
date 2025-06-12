@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/home/home_page.dart';
 import 'package:frontend/pages/onboarding/login_or_register.dart';
+import 'package:frontend/pages/onboarding/login_register_toggle.dart';
 import 'package:frontend/services/auth_service.dart';
 import 'package:frontend/themes/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,6 +21,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        '/home': (context) => HomePage(),
+        "/login": (context) => LoginRegisterToggle(),
+      },
       title: 'Zvento',
       theme: lightMode,
       debugShowCheckedModeBanner: false,

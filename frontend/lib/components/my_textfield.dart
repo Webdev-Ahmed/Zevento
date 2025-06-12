@@ -6,6 +6,7 @@ class MyTextfield extends StatelessWidget {
   final bool obscureText;
   final bool iconEnabled;
   final IconData? icon;
+  final String? Function(String?)? validator; // Added validator parameter
 
   const MyTextfield({
     super.key,
@@ -14,14 +15,18 @@ class MyTextfield extends StatelessWidget {
     this.obscureText = false,
     this.iconEnabled = false,
     this.icon,
+    this.validator, // Added validator parameter
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      child: TextField(
+      child: TextFormField(
         obscureText: obscureText,
+        controller: controller,
+        validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
@@ -58,8 +63,28 @@ class MyTextfield extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
+          errorBorder: OutlineInputBorder(
+            // Added error border styling
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(
+              width: 1,
+              color: Theme.of(context).colorScheme.error,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            // Added focused error border styling
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(
+              width: 2,
+              color: Theme.of(context).colorScheme.error,
+            ),
+          ),
+          errorStyle: TextStyle(
+            // Added error text styling
+            color: Theme.of(context).colorScheme.error,
+            fontSize: 12,
+          ),
         ),
-        controller: controller,
       ),
     );
   }

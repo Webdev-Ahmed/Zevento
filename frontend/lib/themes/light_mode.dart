@@ -24,6 +24,6 @@ final ThemeData lightMode = ThemeData(
     onTertiary: Color(0xFFEFEFEF),
     surface: Color(0xFFBABABA),
     onSurface: Color.fromARGB(255, 18, 18, 18),
-    error: Color.fromARGB(255, 179, 64, 85),
+    error: Color.fromARGB(255, 197, 80, 80),
   ),
 );
